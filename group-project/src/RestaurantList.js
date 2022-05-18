@@ -27,12 +27,12 @@ export default function RestaurantList() {
         //Print list, including buttons
         <div className="container">
             <div className="d-flex justify-content-start mb-4">
-                <div class="input-group w-50 ms-4">
-                    <input type="text" class="form-control" placeholder="Search for Restaurant" aria-label="searchRestaurant" aria-describedby="searchRestaurant" />
-                    <button class="btn btn-dark" type="button" id="searchRestaurant">Search</button>
+                <div className="input-group w-50 ms-4">
+                    <input type="text" className="form-control" placeholder="Search for Restaurant" aria-label="searchRestaurant" aria-describedby="searchRestaurant" />
+                    <button className="btn btn-dark" type="button" id="searchRestaurant">Search</button>
                 </div>
-                <select class="form-select h-25 w-25 p-2 ms-4" aria-label="SelectGrade">
-                    <option selected>Filter by Grade</option>
+                <select className="form-select h-25 w-25 p-2 ms-4" aria-label="SelectGrade">
+                    <option defaultValue>Filter by Grade</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
