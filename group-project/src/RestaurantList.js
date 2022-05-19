@@ -27,10 +27,10 @@ export default function RestaurantList() {
         //Print list, including buttons
         <div className="container">
             <div className="d-flex justify-content-start mb-4">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <input type="text" aria-label="City" placeholder="Name City" class="form-control"></input>
-                    <button class="btn btn-outline-dark" type="button" id="button-addon2">Search</button>
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <input type="text" aria-label="City" placeholder="Name City" className="form-control"></input>
+                    <button className="btn btn-outline-dark" type="button" id="button-addon2">Search</button>
                 </div>
 
                 {/* Filter By Grade*/}
