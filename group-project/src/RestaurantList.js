@@ -1,9 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Restaurant from './Restaurant';
 
-
 export default function RestaurantList() {
-    const [restaurant, setRestaurant] = useState([
+    const [businesses, setRestaurant] = useState([
 
     ]);
     const searchRef = useRef();
@@ -23,7 +22,7 @@ export default function RestaurantList() {
             }
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setRestaurant(data.businesses))
     }
 
 
@@ -62,7 +61,9 @@ export default function RestaurantList() {
             <div className="mb-4">
                 <h2 className="display-6 mb-4">Restaurants</h2>
 
-                {/*HÄR SKA RESTAURANGERNA GENOM API KÖRAS IN */}
+                <ul id="movie-list">
+                { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
+                </ul>
 
                 {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
                 <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
