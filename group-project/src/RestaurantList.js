@@ -6,21 +6,24 @@ export default function RestaurantList() {
     const [restaurant, setRestaurant] = useState([
 
     ]);
-    const inputRef = useRef();
-    const gradeRef = useRef();
+    const searchRef = useRef();
+    const cityRef = useRef();
+    //const gradeRef = useRef();
 
     function searchRestaurants() {
-        /*
-        {
-            url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=stockholm&term=" + $("#search-field").val(), //Hämtar filmer från APIet med användarens input som sökvärde
+        console.log(cityRef)
+        const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
+        fetch(apiUrl, {
             dataType: "JSON",
             type: "GET",
             headers: {
-                "x-requested-with": "xmlhttprequest",
-                "Access-Control-Allow-Origin":"*",
-                "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
-        }
-        */
+            "x-requested-with": "xmlhttprequest",
+            "Access-Control-Allow-Origin":"*",
+            "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
     }
 
 
@@ -41,8 +44,8 @@ export default function RestaurantList() {
         <div className="container">
             <div className="d-flex justify-content-start mb-4">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <input type="text" aria-label="City" placeholder="Name City" class="form-control"></input>
+                    <input ref={searchRef} type="text" class="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <input ref={cityRef} type="text" aria-label="City" placeholder="Name City" class="form-control"></input>
                     <button class="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
 
@@ -78,4 +81,3 @@ export default function RestaurantList() {
         </div>
     )
 }
-
