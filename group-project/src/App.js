@@ -1,4 +1,5 @@
 import RestaurantList from './RestaurantList';
+import Map from './Map';
 import './App.css';
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
         </h1>
       </div>
       <RestaurantList/>
+      <Map/>
+      <p> hej</p>
     </div>
   );
 }
