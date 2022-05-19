@@ -1,0 +1,24 @@
+.navbar{
+    background-color: #18dd5a;
+    background: url(../public/green_background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.btn{
+    background-color: #1faf4f;
+}
+
+body{
+    background: url(../public/food_background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    backdrop-filter: blur(2px);
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+
