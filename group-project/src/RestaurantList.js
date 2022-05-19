@@ -27,10 +27,12 @@ export default function RestaurantList() {
         //Print list, including buttons
         <div className="container">
             <div className="d-flex justify-content-start mb-4">
-                <div className="input-group w-50 ms-4">
-                    <input type="text" className="form-control" placeholder="Search for Restaurant" aria-label="searchRestaurant" aria-describedby="searchRestaurant" />
-                    <button className="btn btn-dark" type="button" id="searchRestaurant">Search</button>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
                 </div>
+
+
                 <select className="form-select h-25 w-25 p-2 ms-4" aria-label="SelectGrade">
                     <option defaultValue>Filter by Grade</option>
                     <option value="1">1</option>
@@ -42,7 +44,7 @@ export default function RestaurantList() {
             </div>
             <div className="mb-4">
                 <h2 className="display-6 mb-4">Restaurants</h2>
-                
+
                 {/*HÄR SKA RESTAURANGERNA GENOM API KÖRAS IN */}
 
                 {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
