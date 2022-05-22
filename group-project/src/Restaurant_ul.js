@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import Restaurant from './Restaurant';
+import Restaurant from './Restaurant_li';
 
 export default function RestaurantList() {
     const [businesses, setRestaurant] = useState([
@@ -10,7 +10,6 @@ export default function RestaurantList() {
     //const gradeRef = useRef();
 
     function searchRestaurants() {
-        console.log(cityRef)
         const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
         fetch(apiUrl, {
             dataType: "JSON",
@@ -62,7 +61,7 @@ export default function RestaurantList() {
                 <h2 className="display-6 mb-4">Restaurants</h2>
 
                 <ul id="movie-list">
-                { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
+                    { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
                 </ul>
 
                 {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}

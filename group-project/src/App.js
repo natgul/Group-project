@@ -1,4 +1,4 @@
-import RestaurantList from './RestaurantList';
+import RestaurantList from './Restaurant_ul';
 import './App.css';
 
 function App() {
@@ -41,7 +41,8 @@ function App() {
         </div>
       </nav>
       <div className="container">
-        <h1 className="display-5 mt-4 mb-5 text-center">Find your Restaurant
+        <h1 className="display-5 mt-4 mb-5 text-center">
+          Find your Restaurant
         </h1>
       </div>
       <RestaurantList/>
