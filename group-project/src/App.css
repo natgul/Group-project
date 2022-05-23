@@ -1,23 +1,29 @@
 .navbar{
-    background-color: #18dd5a;
-    background: url(../public/green_background.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding: 20px;
 }
 
 .btn{
-    background-color: #1faf4f;
+    background-color: rgb(99, 204, 99);
+    border: none;
 }
 
 body{
-    background: url(../public/food_background.jpeg);
+    background: url(../public/gallery1.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
     background-position: center center;
     background-attachment: fixed;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 
-
+#mapContainer { 
+    width: 30%;
+    height: 50vh; 
+}
