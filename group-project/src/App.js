@@ -1,15 +1,14 @@
 import RestaurantList from './Restaurant_ul';
-import Testfile from './testfile.js'
+import Restaurant from './Restaurant.js'
 import './App.css';
 import { Route, Routes } from "react-router-dom";
-
 
 function App() {
   return (
     <div className="app">
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <a className="navbar-brand display-4" href="#">Your Local Food Compass</a>
+          <a className="navbar-brand display-4" href="/">Your Local Food Compass</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -45,7 +44,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={ <RestaurantList/> } />
-        <Route path="/restaurant" element={ <Testfile/>} />
+        <Route path="/restaurant/:id" element={ <Restaurant/> }/>
       </Routes>
     </div>
   );

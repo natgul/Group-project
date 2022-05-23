@@ -23,7 +23,6 @@ export default function RestaurantList() {
         .then(data => setRestaurant(data.businesses))
     }
 
-
     function addRestaurantToList() {
         console.log("add")
     }
