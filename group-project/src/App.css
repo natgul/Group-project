@@ -21,4 +21,7 @@ body{
     
 }
 
-
+#mapContainer { 
+    width: 30%;
+    height: 50vh; 
+}

@@ -1,6 +1,12 @@
+import React, {useState} from "react";
 import RestaurantList from './RestaurantList';
-import Map from './Map';
 import './App.css';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup
+} from 'react-leaflet';
 
 function App() {
   return (
@@ -46,8 +52,20 @@ function App() {
         </h1>
       </div>
       <RestaurantList/>
-      <Map/>
-      <p> hej</p>
+      <div id="map">
+        <MapContainer id ="mapContainer" center={[55.596, 13.023]} zoom={20} scrollWheelZoom={true}>
+          <TileLayer
+            attribution='&copy; <a 
+        href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[55.596, 13.023]}>
+            <Popup>09
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
     </div>
   );
 }
