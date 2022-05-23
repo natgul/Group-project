@@ -14,13 +14,13 @@ export default function RestaurantList() {
             dataType: "JSON",
             type: "GET",
             headers: {
-            "x-requested-with": "xmlhttprequest",
-            "Access-Control-Allow-Origin":"*",
-            "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
+                "x-requested-with": "xmlhttprequest",
+                "Access-Control-Allow-Origin": "*",
+                "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
             }
         })
-        .then(res => res.json())
-        .then(data => setRestaurant(data.businesses))
+            .then(res => res.json())
+            .then(data => setRestaurant(data.businesses))
     }
 
 
@@ -59,12 +59,12 @@ export default function RestaurantList() {
                     <option value="5">5</option>
                 </select>
             </div>
-            <div className="mb-4">
+            <div className="container mb-4">
                 <h2 className="display-6 mb-4">Restaurants</h2>
-
                 <ul id="movie-list">
-                    { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
+                    {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)}
                 </ul>
+
 
                 {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
                 <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
