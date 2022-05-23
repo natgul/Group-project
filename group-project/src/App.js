@@ -1,5 +1,8 @@
 import RestaurantList from './Restaurant_ul';
+import Testfile from './testfile.js'
 import './App.css';
+import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   return (
@@ -40,12 +43,10 @@ function App() {
           </div>
         </div>
       </nav>
-      <div className="container">
-        <h1 className="display-5 mt-4 mb-5 text-center">
-          Find your Restaurant
-        </h1>
-      </div>
-      <RestaurantList/>
+      <Routes>
+        <Route path="/" element={ <RestaurantList/> } />
+        <Route path="/restaurant" element={ <Testfile/>} />
+      </Routes>
     </div>
   );
 }

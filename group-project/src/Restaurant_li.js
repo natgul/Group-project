@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function Restaurant(props) {
     console.log(props.item)
@@ -9,7 +10,7 @@ export default function Restaurant(props) {
             <div class="card w-4">
                 <img src={props.item.image_url} class="card-img-top" alt="Bild på mat"/>
                     <div class="card-body">
-                        <a href='../public/ASingleRestaurant.html'>{props.item.name}</a>
+                        <Link to={'/restaurant'} > {props.item.name} </Link>
                     </div>
             </div>
         </li>

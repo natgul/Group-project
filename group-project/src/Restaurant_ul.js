@@ -2,9 +2,8 @@ import React, { useState, useRef } from 'react';
 import Restaurant from './Restaurant_li';
 
 export default function RestaurantList() {
-    const [businesses, setRestaurant] = useState([
+    const [businesses, setRestaurant] = useState([]);
 
-    ]);
     const searchRef = useRef();
     const cityRef = useRef();
     //const gradeRef = useRef();
@@ -40,6 +39,9 @@ export default function RestaurantList() {
     return (
         //Print list, including buttons
         <div className="container">
+            <h1 className="display-5 mt-4 mb-5 text-center">
+                Find your Restaurant
+            </h1>
             <div className="d-flex justify-content-start mb-4">
                 <div class="input-group mb-3">
                     <input ref={searchRef} type="text" class="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
