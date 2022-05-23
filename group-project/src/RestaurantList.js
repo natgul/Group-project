@@ -1,16 +1,32 @@
 import React, { useState, useRef } from 'react';
 import Restaurant from './Restaurant';
 
-
 export default function RestaurantList() {
-    const [restaurant, setRestaurant] = useState([
+    const [businesses, setRestaurant] = useState([
 
     ]);
-    const inputRef = useRef();
-    const gradeRef = useRef();
+    const searchRef = useRef();
+    const cityRef = useRef();
+    //const gradeRef = useRef();
+
+    function searchRestaurants() {
+        console.log(cityRef)
+        const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
+        fetch(apiUrl, {
+            dataType: "JSON",
+            type: "GET",
+            headers: {
+            "x-requested-with": "xmlhttprequest",
+            "Access-Control-Allow-Origin":"*",
+            "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
+            }
+        })
+        .then(res => res.json())
+        .then(data => setRestaurant(data.businesses))
+    }
 
 
-    function AddRestaurantToList() {
+    function addRestaurantToList() {
         console.log("add")
     }
 
@@ -22,15 +38,14 @@ export default function RestaurantList() {
         console.log("sort")
     }
 
-
     return (
         //Print list, including buttons
         <div className="container">
             <div className="d-flex justify-content-start mb-4">
-                <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <input type="text" aria-label="City" placeholder="Name City" className="form-control"></input>
-                    <button className="btn btn-outline-dark" type="button" id="button-addon2">Search</button>
+                <div class="input-group mb-3">
+                    <input ref={searchRef} type="text" class="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <input ref={cityRef} type="text" aria-label="City" placeholder="Name City" class="form-control"></input>
+                    <button class="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
 
                 {/* Filter By Grade*/}
@@ -46,10 +61,12 @@ export default function RestaurantList() {
             <div className="mb-4">
                 <h2 className="display-6 mb-4">Restaurants</h2>
 
-                {/*HÄR SKA RESTAURANGERNA GENOM API KÖRAS IN */}
+                <ul id="movie-list">
+                { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
+                </ul>
 
                 {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
-                <button className="btn" onClick={AddRestaurantToList}>Save as Favourite</button>
+                <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
             </div>
 
             <div>
@@ -65,4 +82,3 @@ export default function RestaurantList() {
         </div>
     )
 }
-
