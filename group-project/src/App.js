@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import RestaurantList from './RestaurantList';
+import RestaurantList from './Restaurant_ul';
+import Testfile from './testfile.js';
 import './App.css';
 import {
   MapContainer,
@@ -7,20 +7,22 @@ import {
   Marker,
   Popup
 } from 'react-leaflet';
+import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="app">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand display-4" href="#">Your Local Food Compass</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
+          <a className="navbar-brand display-4" href="#">Your Local Food Compass</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
             </ul>
           </div>
@@ -45,6 +47,10 @@ function App() {
           </Marker>
         </MapContainer>
       </div>
+      <Routes>
+        <Route path="/" element={ <RestaurantList/> } />
+        <Route path="/restaurant" element={ <Testfile/>} />
+      </Routes>
     </div>
   );
 }
