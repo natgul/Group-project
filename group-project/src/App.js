@@ -13,26 +13,26 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="app">
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand display-4" href="#">Your Local Food Compass</a>
+          <a className="navbar-brand display-4 text-white" href="#">Your Local Food Compass</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <a className="nav-link active text-white" aria-current="page" href="#">Home</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div className="container">
-        <h1 className="display-5 mt-4 mb-5 text-center">Find your Restaurant
-        </h1>
-      </div>
-      <RestaurantList/>
+      
+      <Routes>
+        <Route path="/" element={ <RestaurantList/> } />
+        <Route path="/restaurant" element={ <Testfile/>} />
+      </Routes>
       <div id="map">
         <MapContainer id ="mapContainer" center={[55.596, 13.023]} zoom={15} scrollWheelZoom={true}>
           <TileLayer
@@ -47,10 +47,6 @@ function App() {
           </Marker>
         </MapContainer>
       </div>
-      <Routes>
-        <Route path="/" element={ <RestaurantList/> } />
-        <Route path="/restaurant" element={ <Testfile/>} />
-      </Routes>
     </div>
   );
 }
