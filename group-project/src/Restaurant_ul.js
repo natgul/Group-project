@@ -43,8 +43,8 @@ export default function RestaurantList() {
             </h1>
             <div className="d-flex justify-content-start mb-4">
                 <div class="input-group mb-3">
-                    <input ref={searchRef} type="text" class="form-control" placeholder="Search for Restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <input ref={cityRef} type="text" aria-label="City" placeholder="Name City" class="form-control"></input>
+                    <input ref={searchRef} type="text" class="form-control" placeholder="Search for your favorite food or restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <input ref={cityRef} type="text" aria-label="City" placeholder="City" class="form-control"></input>
                     <button class="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
 
