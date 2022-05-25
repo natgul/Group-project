@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+    MapContainer,
+    TileLayer,
+    Marker,
+    Popup
+} from 'react-leaflet';
 
 export default function ASingleRestaurant() {
     let { id } = useParams();
@@ -18,9 +24,28 @@ export default function ASingleRestaurant() {
     .then(res => res.json())
     .then(data => setARestaurant(data))
 
+    function addRestaurantToList() {
+        console.log("add")
+    }
+
     return (
         <div>
             {data.name}
+            <div id="map">
+                <MapContainer id ="mapContainer" center={[55.596, 13.023]} zoom={15} scrollWheelZoom={true}>
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={[55.596, 13.023]}>
+                    <Popup>09
+                    A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                </Marker>
+                </MapContainer>
+        </div>
+            {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
+            <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
         </div>
     )
 }

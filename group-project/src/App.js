@@ -1,12 +1,6 @@
 import RestaurantList from './Restaurant_ul';
 import Restaurant from './Restaurant.js'
 import './App.css';
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup
-} from 'react-leaflet';
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -21,7 +15,7 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active text-white" aria-current="page" href="#">Home</a>
+                <a className="nav-link active text-white" aria-current="page" href="#">Favorites</a>
               </li>
             </ul>
           </div>
@@ -32,19 +26,6 @@ function App() {
         <Route path="/" element={ <RestaurantList/> } />
         <Route path="/restaurant/:id" element={ <Restaurant/> }/>
       </Routes>
-      <div id="map">
-        <MapContainer id ="mapContainer" center={[55.596, 13.023]} zoom={15} scrollWheelZoom={true}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[55.596, 13.023]}>
-            <Popup>09
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer>
-      </div>
     </div>
   );
 }
