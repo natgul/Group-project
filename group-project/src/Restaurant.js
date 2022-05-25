@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import {
     MapContainer,
@@ -7,7 +7,7 @@ import {
     Popup
 } from 'react-leaflet';
 
-export default function ASingleRestaurant(props) {
+export default function ASingleRestaurant() {
     let { id } = useParams();
     const [data, setARestaurant] = useState([]); 
     console.log(data.coordinates)
