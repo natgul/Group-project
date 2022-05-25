@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function Restaurant(props) {
-    console.log(props.item)
-    console.log(props.item.id)
+    console.log(props.item.coordinates)
+    
     return (
         //Prints out each restaurant with content
         <li className='card-group bg-light bg-gradient m-1'>
