@@ -20,4 +20,8 @@ body{
     background-attachment: fixed;
 }
 
+#movie-list {
+    display: flex;
+    flex-wrap: wrap;
+}
 
