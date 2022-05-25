@@ -9,7 +9,7 @@ import {
 
 export default function ASingleRestaurant() {
     let { id } = useParams();
-    const [data, setARestaurant] = useState([]);
+    const [data, setARestaurant] = useState([]); 
 
     const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + id
     fetch(apiUrl, {
@@ -28,16 +28,16 @@ export default function ASingleRestaurant() {
         console.log("add")
     }
 
-    return (
+    return data.coordinates?(
         <div>
             {data.name}
             <div id="map">
-                <MapContainer id ="mapContainer" center={[55.596, 13.023]} zoom={15} scrollWheelZoom={true}>
+                <MapContainer id ="mapContainer" center={[data.coordinates.latitude, data.coordinates.longitude]} zoom={15} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[55.596, 13.023]}>
+                <Marker position={[data.coordinates.latitude, data.coordinates.longitude]}>
                     <Popup>09
                     A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
@@ -47,5 +47,6 @@ export default function ASingleRestaurant() {
             {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
             <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
         </div>
-    )
+    ):
+    (<span></span>);
 }
