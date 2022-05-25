@@ -25,6 +25,10 @@ export default function ASingleRestaurant() {
     .then(res => res.json())
     .then(data => setARestaurant(data))
 
+    function addRestaurantToList() {
+        console.log("add")
+    }
+
     return (
         <div>
             {data.name}
@@ -40,7 +44,9 @@ export default function ASingleRestaurant() {
                     </Popup>
                 </Marker>
                 </MapContainer>
-            </div>
+        </div>
+            {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
+            <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
         </div>
     )
 }

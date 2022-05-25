@@ -23,10 +23,6 @@ export default function RestaurantList() {
         .then(data => setRestaurant(data.businesses))
     }
 
-    function addRestaurantToList() {
-        console.log("add")
-    }
-
     function deleteRestaurantFromList() {
         console.log("delete")
     }
@@ -47,30 +43,14 @@ export default function RestaurantList() {
                     <input ref={cityRef} type="text" aria-label="City" placeholder="City" class="form-control"></input>
                     <button class="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
-
-                {/* Filter By Grade*/}
-                <select className="form-select h-25 w-25 p-2 ms-4" aria-label="SelectGrade">
-                    <option defaultValue>Filter by Grade</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
             </div>
             <div className="mb-4">
-                <h2 className="display-6 mb-4">Restaurants</h2>
-
                 <ul id="movie-list">
                     { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
                 </ul>
-
-                {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
-                <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
             </div>
 
             <div>
-                <h2 className="display-6">Favourites</h2>
                 <ul className="list-group ">
                     {/*
                     ----DENNA KOD RADEN SKA ÄNDRAS TILL ANNAN ----
