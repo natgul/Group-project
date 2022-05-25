@@ -45,7 +45,7 @@ export default function RestaurantList() {
                 </div>
             </div>
             <div className="mb-4">
-                <ul id="movie-list">
+                <ul id="restaurant-list">
                     {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)}
                 </ul>
             </div>
