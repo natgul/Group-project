@@ -14,23 +14,19 @@ export default function RestaurantList() {
             dataType: "JSON",
             type: "GET",
             headers: {
-            "x-requested-with": "xmlhttprequest",
-            "Access-Control-Allow-Origin":"*",
-            "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
+                "x-requested-with": "xmlhttprequest",
+                "Access-Control-Allow-Origin": "*",
+                "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
             }
         })
-        .then(res => res.json())
-        .then(data => setRestaurant(data.businesses))
+            .then(res => res.json())
+            .then(data => setRestaurant(data.businesses))
     }
 
     function deleteRestaurantFromList() {
         console.log("delete")
     }
-
-    function sortByGrade() {
-        console.log("sort")
-    }
-
+    
     return (
         //Print list, including buttons
         <div className="container">
@@ -46,17 +42,7 @@ export default function RestaurantList() {
             </div>
             <div className="mb-4">
                 <ul id="movie-list">
-                    { businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList}/>) }
-                </ul>
-            </div>
-
-            <div>
-                <ul className="list-group ">
-                    {/*
-                    ----DENNA KOD RADEN SKA ÄNDRAS TILL ANNAN ----
-                    {restaurants.map(restaurant => <restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)} 
-                    -----SLUT PÅ KODRAD------
-                    */}
+                    {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)}
                 </ul>
             </div>
         </div>

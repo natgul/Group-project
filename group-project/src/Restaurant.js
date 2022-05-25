@@ -28,6 +28,7 @@ export default function ASingleRestaurant() {
         console.log("add")
     }
 
+    //Hämtar kartan & placerar ut en marker på den klickade restaurangen.
     return data.coordinates?(
         <div>
             {data.name}

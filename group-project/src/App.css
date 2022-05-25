@@ -14,7 +14,7 @@ body{
     background: url(../public/gallery1.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100%;
+    min-height: 800px;
     backdrop-filter: blur(3px);
     background-position: center center;
     background-attachment: fixed;
