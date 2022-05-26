@@ -41,8 +41,18 @@ export default function RestaurantList() {
                 </div>
             </div>
             <div className="mb-4">
-                <ul id="movie-list">
+                <ul id="restaurant-list">
                     {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)}
+                </ul>
+            </div>
+
+            <div>
+                <ul className="list-group ">
+                    {/*
+                    ----DENNA KOD RADEN SKA ÄNDRAS TILL ANNAN ----
+                    {restaurants.map(restaurant => <restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)} 
+                    -----SLUT PÅ KODRAD------
+                    */}
                 </ul>
             </div>
         </div>
