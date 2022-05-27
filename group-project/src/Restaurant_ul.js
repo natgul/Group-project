@@ -6,7 +6,6 @@ export default function RestaurantList() {
 
     const searchRef = useRef();
     const cityRef = useRef();
-    //const gradeRef = useRef();
 
     function searchRestaurants() {
         const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
@@ -27,10 +26,6 @@ export default function RestaurantList() {
         console.log("delete")
     }
 
-    function sortByGrade() {
-        console.log("sort")
-    }
-
     return (
         //Print list, including buttons
         <div className="container">
@@ -39,8 +34,8 @@ export default function RestaurantList() {
             </h1>
             <div className="d-flex justify-content-start mb-4">
                 <div className="input-group mb-3">
-                    <input ref={searchRef} type="text" class="form-control" placeholder="Search for your favorite food or restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <input ref={cityRef} type="text" aria-label="City" placeholder="City" class="form-control"></input>
+                    <input ref={searchRef} type="text" className="form-control" placeholder="Search for your favorite food or restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <input ref={cityRef} type="text" aria-label="City" placeholder="City" className="form-control"></input>
                     <button className="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
             </div>
