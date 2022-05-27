@@ -9,38 +9,38 @@ import {
 
 export default function ASingleRestaurant() {
     let { id } = useParams();
-    const [data, setARestaurant] = useState([]); 
+    const [ data, setARestaurant ] = useState([]); 
 
     useEffect(() => {
-        const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + id
+        const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + id;
         fetch(apiUrl, {
             dataType: "JSON",
             type: "GET",
             headers: {
             "x-requested-with": "xmlhttprequest",
-            "Access-Control-Allow-Origin":"*",
+            "Access-Control-Allow-Origin": "*",
             "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
             }
         })
         .then(res => res.json())
-        .then(data => { setARestaurant(data) }) 
+        .then(data => { setARestaurant(data) })
     }, [id]);
     
     function addRestaurantToList() {
         console.log("add")
     }
 
-    //Hämtar kartan & placerar ut en marker på den klickade restaurangen.
+    //Hämtar kartan & placerar ut en markör på den klickade restaurangen
     return data.coordinates?(
         <div>
             {data.name}
             <div id="map">
-                <MapContainer id ="mapContainer" center={[data.coordinates.latitude, data.coordinates.longitude]} zoom={15} scrollWheelZoom={true}>
+                <MapContainer id="mapContainer" center={ [data.coordinates.latitude, data.coordinates.longitude] } zoom={ 15 } scrollWheelZoom={ true }>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[data.coordinates.latitude, data.coordinates.longitude]}>
+                <Marker position={ [data.coordinates.latitude, data.coordinates.longitude] }>
                     <Popup>
                         09 A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
