@@ -1,7 +1,8 @@
 import RestaurantList from './Restaurant_ul';
-import Restaurant from './Restaurant.js'
+import Restaurant from './Restaurant';
+import Favorites from './Favorite_ul';
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active text-white" aria-current="page" href="#">Favorites</a>
+                <span className="nav-link active text-white" aria-current="page"> 
+                  <Link to={"/favorites/"}> Favorites </Link>
+                </span>
               </li>
             </ul>
           </div>
@@ -24,7 +27,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={ <RestaurantList/> } />
-        <Route path="/restaurant/:id" element={ <Restaurant/> }/>
+        <Route path="/restaurant/:id" element={ <Restaurant/> } />
+        <Route path="/favorites/" element={ <Favorites/> } />
       </Routes>
     </div>
   );

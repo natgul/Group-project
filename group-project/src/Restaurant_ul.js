@@ -21,10 +21,6 @@ export default function RestaurantList() {
             .then(res => res.json())
             .then(data => setRestaurant(data.businesses))
     }
-
-    function deleteRestaurantFromList() {
-        console.log("delete")
-    }
     
     return (
         //Print list, including buttons
@@ -41,7 +37,7 @@ export default function RestaurantList() {
             </div>
             <div className="mb-4">
                 <ul id="restaurant-list">
-                    {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)}
+                    {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} />)}
                 </ul>
             </div>
 

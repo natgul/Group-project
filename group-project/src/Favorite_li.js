@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function Restaurant(props) {
-    console.log(props.item)
+export default function Favorite(props) {
     return (
-        //Returnerar en bild och namnet för varje restaurang från API:et
+        //Returnerar en bild och namnet för varje restaurang från locastorage
 
         //Behövs måsvingarna på rad 12 och 14?
         <li className='card-group'>

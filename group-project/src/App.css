@@ -70,3 +70,8 @@ body{
     text-decoration: none;
     padding: 5px;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}

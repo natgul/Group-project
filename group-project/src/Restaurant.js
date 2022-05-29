@@ -25,15 +25,41 @@ export default function ASingleRestaurant() {
         .then(res => res.json())
         .then(data => { setARestaurant(data) })
     }, [id]);
+
+    function loadFavorites() {
+        var favorites = localStorage.getItem("favorites");
+
+        if(favorites == null) {
+            localStorage.setItem("favorites", JSON.stringify([]));
+            return [];
+        } else {
+            return JSON.parse(favorites);
+        }
+    }
     
-    function addRestaurantToList() {
-        console.log("add")
+    function addRestaurantToFavorites() {
+        var favorites = loadFavorites();
+        favorites.push(data);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+    function removeAsFavorite() {
+        var favorites = loadFavorites();
+
+        var favorites = favorites.filter(function(favorite) {
+            return favorite.id !== id;
+        })
+    
+        localStorage.setItem("favorites", JSON.stringify(favorites));
     }
 
     //Hämtar kartan & placerar ut en markör på den klickade restaurangen
     return data.coordinates?(
         <div>
-            {data.name}
+            <h2>{data.name}</h2>
+            <p>Rating: {data.rating}</p>
+            <p>Price class: {data.price}</p>
+            <p>Phone number: {data.phone}</p>
             <div id="map">
                 <MapContainer id="mapContainer" center={ [data.coordinates.latitude, data.coordinates.longitude] } zoom={ 15 } scrollWheelZoom={ true }>
                 <TileLayer
@@ -46,9 +72,11 @@ export default function ASingleRestaurant() {
                     </Popup>
                 </Marker>
                 </MapContainer>
+                <br></br>
             </div>
             {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
-            <button className="btn" onClick={addRestaurantToList}>Save as Favourite</button>
+            <button className="btn" onClick={addRestaurantToFavorites}>Save as Favorite</button>
+            <button className="btn" onClick={removeAsFavorite}>Remove as Favorite</button>
         </div>
     ):
     (<span></span>);
