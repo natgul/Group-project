@@ -45,12 +45,11 @@ export default function ASingleRestaurant() {
 
     function removeAsFavorite() {
         var favorites = loadFavorites();
-
         var favorites = favorites.filter(function(favorite) {
             return favorite.id !== id;
         })
-    
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert("This restaurant has been removed from your favorites!")
     }
 
     //Hämtar kartan & placerar ut en markör på den klickade restaurangen
