@@ -1,5 +1,5 @@
 # Group-project
-Grupp-projekt med Mesam, Caroline &amp; Natalie
+Grupp-projekt med Mesam, Caroline, Natalie
 
 
 # <Om projektet>
