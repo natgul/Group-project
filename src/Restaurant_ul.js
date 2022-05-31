@@ -40,16 +40,6 @@ export default function RestaurantList() {
                     {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} />)}
                 </ul>
             </div>
-
-            <div>
-                <ul className="list-group ">
-                    {/*
-                    ----DENNA KOD RADEN SKA ÄNDRAS TILL ANNAN ----
-                    {restaurants.map(restaurant => <restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)} 
-                    -----SLUT PÅ KODRAD------
-                    */}
-                </ul>
-            </div>
         </div>
     )
 }
