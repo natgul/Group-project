@@ -41,6 +41,7 @@ export default function ASingleRestaurant() {
         var favorites = loadFavorites();
         favorites.push(data);
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert("This restaurant has been added to your favorites!")
     }
 
     function removeAsFavorite() {
