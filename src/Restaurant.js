@@ -68,15 +68,14 @@ export default function ASingleRestaurant() {
                 />
                 <Marker position={ [data.coordinates.latitude, data.coordinates.longitude] }>
                     <Popup>
-                        09 A pretty CSS3 popup. <br /> Easily customizable.
+                        Tjena Kexet! <br /> Sitter du här och smular?.
                     </Popup>
                 </Marker>
                 </MapContainer>
                 <br></br>
             </div>
-            {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
-            <button className="btn" onClick={addRestaurantToFavorites}>Save as Favorite</button>
-            <button className="btn ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
+            <button className="btn btn-success" onClick={addRestaurantToFavorites}>Save as Favorite</button>
+            <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
         </div>
     ):
     (<span></span>);

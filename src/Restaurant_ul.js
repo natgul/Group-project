@@ -39,7 +39,7 @@ export default function RestaurantList() {
                 <div className="input-group mb-3">
                     <input ref={searchRef} type="text" className="form-control" placeholder="Search for your favorite food or restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
                     <input ref={cityRef} type="text" aria-label="City" placeholder="City" className="form-control"></input>
-                    <button className="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
+                    <button className="btn btn-success btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
             </div>
             <div className="mb-4">
