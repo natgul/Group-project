@@ -35,6 +35,7 @@ export default function ASingleRestaurant() {
         var favorites = loadFavorites();
         favorites.push(data);
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert("This restaurant has been saved to your favorites!")
     }
 
     function removeAsFavorite() {
@@ -50,9 +51,9 @@ export default function ASingleRestaurant() {
     return data.coordinates?(
         <div className="container">
             <h2>{data.name}</h2>
-            <p>Rating: {data.rating}</p>
-            <p>Price class: {data.price}</p>
+            <p>Rating: {data.rating}/5</p>
             <p>Phone number: {data.phone}</p>
+            <p>Address: {data.location.address1}</p>
             <div id="map">
                 <MapContainer id="mapContainer" center={ [data.coordinates.latitude, data.coordinates.longitude] } zoom={ 15 } scrollWheelZoom={ true }>
                 <TileLayer
