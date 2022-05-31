@@ -51,7 +51,8 @@ body{
 }
 
 #mapContainer { 
-    width: 40%;
+    width: 60%;
+    
     height: 50vh; 
 }
 .card > img {
@@ -75,3 +76,9 @@ a {
     color: white;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 770px) {
+    #mapContainer {
+      width: 100%;
+    }
+  }
