@@ -28,13 +28,7 @@ export default function ASingleRestaurant() {
 
     function loadFavorites() {
         var favorites = localStorage.getItem("favorites");
-
-        if(favorites == null) {
-            localStorage.setItem("favorites", JSON.stringify([]));
-            return [];
-        } else {
-            return JSON.parse(favorites);
-        }
+        return JSON.parse(favorites);
     }
 
     function addRestaurantToFavorites() {

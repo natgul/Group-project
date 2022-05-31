@@ -4,6 +4,12 @@ import Restaurant from './Restaurant_li';
 export default function RestaurantList() {
     const [businesses, setRestaurant] = useState([]);
 
+    var favorites = localStorage.getItem("favorites");
+
+    if(favorites == null) {
+        localStorage.setItem("favorites", JSON.stringify([]));
+    }
+
     const searchRef = useRef();
     const cityRef = useRef();
 
