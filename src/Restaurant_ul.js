@@ -8,6 +8,7 @@ export default function RestaurantList() {
     const cityRef = useRef();
 
     function searchRestaurants() {
+
         const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
         fetch(apiUrl, {
             dataType: "JSON",
@@ -19,9 +20,15 @@ export default function RestaurantList() {
             }
         })
             .then(res => res.json())
-            .then(data => setRestaurant(data.businesses))
+            .then(data => {
+                if ("businesses" in data) {
+                    setRestaurant(data.businesses);
+                } else {
+                    alert("Din sökning finns inte. Sök igen!")
+                }
+            });
     }
-    
+ 
     return (
         //Print list, including buttons
         <div className="container">
@@ -40,16 +47,6 @@ export default function RestaurantList() {
                     {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} />)}
                 </ul>
             </div>
+        </div>);
 
-            <div>
-                <ul className="list-group ">
-                    {/*
-                    ----DENNA KOD RADEN SKA ÄNDRAS TILL ANNAN ----
-                    {restaurants.map(restaurant => <restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)} 
-                    -----SLUT PÅ KODRAD------
-                    */}
-                </ul>
-            </div>
-        </div>
-    )
 }
