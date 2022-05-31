@@ -1,5 +1,5 @@
 # Group-project
-Grupp-projekt med Mesam, Caroline &amp; Natalie
+Grupp-projekt med Mesam, Caroline, Natalie
 
 # Vårt Projekt
 Detta projekt ger användaren möjligheten att söka efter mat som hen är sugen på och stad. Resultatet visar alla restauranger i sökta stad som finns. Om någon av dessa restauranger fångar intresset hos användaren så kan hen trycka på den specifika restaurangen, komma till en ny sida och där få vidare information om den såsom Adress, telefonnummer samt 
