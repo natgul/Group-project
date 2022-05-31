@@ -36,7 +36,7 @@ export default function ASingleRestaurant() {
             return JSON.parse(favorites);
         }
     }
-    
+
     function addRestaurantToFavorites() {
         var favorites = loadFavorites();
         favorites.push(data);
@@ -54,7 +54,7 @@ export default function ASingleRestaurant() {
 
     //Hämtar kartan & placerar ut en markör på den klickade restaurangen
     return data.coordinates?(
-        <div className="container w-100">
+        <div className="container">
             <h2>{data.name}</h2>
             <p>Rating: {data.rating}</p>
             <p>Price class: {data.price}</p>
@@ -75,7 +75,7 @@ export default function ASingleRestaurant() {
             </div>
             {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
             <button className="btn" onClick={addRestaurantToFavorites}>Save as Favorite</button>
-            <button className="btn" onClick={removeAsFavorite}>Remove as Favorite</button>
+            <button className="btn ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
         </div>
     ):
     (<span></span>);
