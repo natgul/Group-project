@@ -1,8 +1,9 @@
 # Group-project
 Grupp-projekt med Mesam, Caroline, Natalie
 
+# Vårt Projekt
+Detta projekt ger användaren möjligheten att söka efter mat som hen är sugen på och stad. Resultatet visar alla restauranger i sökta stad som finns. Om någon av dessa restauranger fångar intresset hos användaren så kan hen trycka på den specifika restaurangen, komma till en ny sida och där få vidare information om den såsom Adress, telefonnummer samt 
 
-# <Om projektet>
 # React vs Vue vs Angular
 
 Realt, Angular och Vue.js anses vara de mest nedladdade javascript-ramverk och bland de är så är React den som har addats ner mest (https://www.npmtrends.com/angular-vs-react-vs-vue ). 
