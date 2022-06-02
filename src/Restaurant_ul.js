@@ -4,10 +4,17 @@ import Restaurant from './Restaurant_li';
 export default function RestaurantList() {
     const [businesses, setRestaurant] = useState([]);
 
+    var favorites = localStorage.getItem("favorites");
+
+    if(favorites == null) {
+        localStorage.setItem("favorites", JSON.stringify([]));
+    }
+
     const searchRef = useRef();
     const cityRef = useRef();
 
     function searchRestaurants() {
+
         const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
         fetch(apiUrl, {
             dataType: "JSON",
@@ -19,9 +26,15 @@ export default function RestaurantList() {
             }
         })
             .then(res => res.json())
-            .then(data => setRestaurant(data.businesses))
+            .then(data => {
+                if ("businesses" in data) {
+                    setRestaurant(data.businesses);
+                } else {
+                    alert("Din sökning finns inte. Sök igen!")
+                }
+            });
     }
-    
+ 
     return (
         //Print list, including buttons
         <div className="container">
@@ -32,7 +45,7 @@ export default function RestaurantList() {
                 <div className="input-group mb-3">
                     <input ref={searchRef} type="text" className="form-control" placeholder="Search for your favorite food or restaurant" aria-label="Recipient's username" aria-describedby="button-addon2" />
                     <input ref={cityRef} type="text" aria-label="City" placeholder="City" className="form-control"></input>
-                    <button className="btn btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
+                    <button className="btn btn-success btn-outline-dark" type="button" id="button-addon2" onClick={searchRestaurants}>Search</button>
                 </div>
             </div>
             <div className="mb-4">
@@ -40,16 +53,6 @@ export default function RestaurantList() {
                     {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} />)}
                 </ul>
             </div>
+        </div>);
 
-            <div>
-                <ul className="list-group ">
-                    {/*
-                    ----DENNA KOD RADEN SKA ÄNDRAS TILL ANNAN ----
-                    {restaurants.map(restaurant => <restaurant key={restaurant.id} item={restaurant} deleteRestaurant={deleteRestaurantFromList} />)} 
-                    -----SLUT PÅ KODRAD------
-                    */}
-                </ul>
-            </div>
-        </div>
-    )
 }

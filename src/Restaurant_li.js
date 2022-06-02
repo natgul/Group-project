@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function Restaurant(props) {
-    console.log(props.item)
     return (
         //Returnerar en bild och namnet för varje restaurang från API:et
 

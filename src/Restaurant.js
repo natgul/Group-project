@@ -31,7 +31,7 @@ export default function ASingleRestaurant() {
         var favorites = localStorage.getItem("favorites");
         return JSON.parse(favorites);
     }
-    
+
     function addRestaurantToFavorites() {
         var favorites = loadFavorites()
 
@@ -56,11 +56,11 @@ export default function ASingleRestaurant() {
 
     //Hämtar kartan & placerar ut en markör på den klickade restaurangen
     return data.coordinates?(
-        <div>
+        <div className="container">
             <h2>{data.name}</h2>
-            <p>Rating: {data.rating}</p>
-            <p>Price class: {data.price}</p>
+            <p>Rating: {data.rating}/5</p>
             <p>Phone number: {data.phone}</p>
+            <p>Address: {data.location.address1}</p>
             <div id="map">
                 <MapContainer id="mapContainer" center={ [data.coordinates.latitude, data.coordinates.longitude] } zoom={ 15 } scrollWheelZoom={ true }>
                 <TileLayer
@@ -69,15 +69,14 @@ export default function ASingleRestaurant() {
                 />
                 <Marker position={ [data.coordinates.latitude, data.coordinates.longitude] }>
                     <Popup>
-                        09 A pretty CSS3 popup. <br /> Easily customizable.
+                        Tjena Kexet! <br /> Sitter du här och smular?.
                     </Popup>
                 </Marker>
                 </MapContainer>
                 <br></br>
             </div>
-            {/*Varje bild/item ska man kunna lägga till i favoritlistan genom koden nedan. OKLART DOCK OM DEN SKA SE UT SÅ HÄR, men funktionen finns där i alla fall */}
-            <button className="btn" onClick={addRestaurantToFavorites}>Save as Favorite</button>
-            <button className="btn" onClick={removeAsFavorite}>Remove as Favorite</button>
+            <button className="btn btn-success" onClick={addRestaurantToFavorites}>Save as Favorite</button>
+            <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
         </div>
     ):
     (<span></span>);

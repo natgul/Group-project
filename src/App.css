@@ -6,7 +6,6 @@
 }
 
 .btn{
-    background-color: rgb(99, 204, 99);
     border: none;
 }
 
@@ -51,7 +50,8 @@ body{
 }
 
 #mapContainer { 
-    width: 30%;
+    width: 60%;
+    
     height: 50vh; 
 }
 .card > img {
@@ -75,3 +75,9 @@ a {
     color: white;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 770px) {
+    #mapContainer {
+      width: 100%;
+    }
+  }
