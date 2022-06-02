@@ -26,28 +26,30 @@ export default function ASingleRestaurant() {
         .then(data => { setARestaurant(data) })
     }, [id]);
 
+    
     function loadFavorites() {
         var favorites = localStorage.getItem("favorites");
-
-        if(favorites == null) {
-            localStorage.setItem("favorites", JSON.stringify([]));
-            return [];
-        } else {
-            return JSON.parse(favorites);
-        }
+        return JSON.parse(favorites);
     }
     
     function addRestaurantToFavorites() {
-        var favorites = loadFavorites();
-        favorites.push(data);
-        localStorage.setItem("favorites", JSON.stringify(favorites));
+        var favorites = loadFavorites()
+
+        if (favorites.some(e => e.id === id)) {
+            alert("This restaurant is already in your favorites!");
+        } else {            
+            favorites.push(data);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("This restaurant has been added to your favorites!");
+        }
     }
 
     function removeAsFavorite() {
         var favorites = loadFavorites();
+
         var favorites = favorites.filter(function(favorite) {
             return favorite.id !== id;
-        })
+        });
         localStorage.setItem("favorites", JSON.stringify(favorites));
         alert("This restaurant has been removed from your favorites!")
     }
