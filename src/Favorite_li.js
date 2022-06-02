@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import removeAsFavorite from './Restaurant';
+
 
 export default function Favorite(props) {
     return (
@@ -12,6 +14,7 @@ export default function Favorite(props) {
                 {<div className="card-title">
                     <Link to={"/restaurant/" + props.item.id}> {props.item.name} </Link>
                 </div>}
+                <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
             </div>
         </li>
     )

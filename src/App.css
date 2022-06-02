@@ -35,6 +35,9 @@ body{
     max-height: 250px;
     margin: 10px;
 }
+li {
+    list-style: none;
+}
 
 .card{
     height: 250px;
@@ -51,7 +54,6 @@ body{
 
 #mapContainer { 
     width: 60%;
-    
     height: 50vh; 
 }
 .card > img {

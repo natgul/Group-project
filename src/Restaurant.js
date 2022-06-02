@@ -76,7 +76,6 @@ export default function ASingleRestaurant() {
                 <br></br>
             </div>
             <button className="btn btn-success" onClick={addRestaurantToFavorites}>Save as Favorite</button>
-            <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
         </div>
     ):
     (<span></span>);
