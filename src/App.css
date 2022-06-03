@@ -28,8 +28,6 @@ body{
     padding:0%;
 }
 
-
-
 .card-group{
     height: 250px;
     margin: 2px;
@@ -54,7 +52,9 @@ body{
     width: 250px;
 }
 
-
+li {
+    list-style: none;
+}
 .card-title {
     position: absolute;
     top: 50%;

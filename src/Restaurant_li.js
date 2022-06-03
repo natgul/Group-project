@@ -6,12 +6,12 @@ export default function Restaurant(props) {
         //Returnerar en bild och namnet för varje restaurang från API:et
 
         //Behövs måsvingarna på rad 12 och 14?
-        <li className='card-group mx-auto'>
-            <div className="card text-center w-4">
-                <img src={props.item.image_url} className="card-img-top h-100" alt="Bild på mat" />
-                {<div className="card-title">
-                    <Link to={"/restaurant/" + props.item.id}> {props.item.name} </Link>
-                </div>}
+        <li className='card-group mx-auto mt-3'>
+            <div className="card text-center">
+                <a href={"/restaurant/" + props.item.id}>
+                    <img src={props.item.image_url} alt={props.item.name} />
+                    <h3 className='card-title'> {props.item.name} </h3>
+                </a>
             </div>
         </li>
     )
