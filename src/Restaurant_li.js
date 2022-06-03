@@ -2,8 +2,7 @@ import React from 'react';
 
 export default function Restaurant(props) {
     return (
-        //Returnerar en bild och namnet för varje restaurang från API:et
-
+        // Returnerar en bild och namn för varje restaurang från API:et
         <li className='card-group mx-auto mt-3'>
             <div className="card text-center">
                 <a href={"/restaurant/" + props.item.id}>
@@ -12,5 +11,5 @@ export default function Restaurant(props) {
                 </a>
             </div>
         </li>
-    )
+    );
 }

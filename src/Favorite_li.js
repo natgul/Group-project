@@ -1,19 +1,14 @@
 import React from 'react';
-import removeAsFavorite from './Restaurant';
-
 
 export default function Favorite(props) {
     return (
-        //Returnerar en bild och namnet för varje restaurang från locastorage
-
-        //Behövs måsvingarna på rad 12 och 14?
+        // Returnerar en bild och namnet för varje restaurang från locastorage
         <li className='card-group mx-auto mt-3'>
             <div className="card text-center">
                 <a href={"/restaurant/" + props.item.id}>
                     <img src={props.item.image_url} alt={props.item.name} />
                     <h3 className='card-title'> {props.item.name} </h3>
                 </a>
-                <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
             </div>
         </li>
         

@@ -8,9 +8,10 @@ import {
 } from 'react-leaflet';
 
 export default function ASingleRestaurant() {
-    let { id } = useParams();
+    const { id } = useParams();
     const [ data, setARestaurant ] = useState([]); 
 
+    // Fetchar data om den specifika restauranger som användaren klickar på samt ser till att den endast fetchas en gång
     useEffect(() => {
         const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/" + id;
         fetch(apiUrl, {
@@ -25,15 +26,16 @@ export default function ASingleRestaurant() {
         .then(res => res.json())
         .then(data => { setARestaurant(data) })
     }, [id]);
-
     
+    // Hämtar "favorites" från localstorage och omvandlar det till objekt
     function loadFavorites() {
         var favorites = localStorage.getItem("favorites");
         return JSON.parse(favorites);
     }
 
+    // När användaren klickar på "Save as favorites" så kontrolleras att restaurangen inte redan finns i localstorage och i så fall lägger till den
     function addRestaurantToFavorites() {
-        var favorites = loadFavorites()
+        var favorites = loadFavorites();
 
         if (favorites.some(e => e.id === id)) {
             alert("This restaurant is already in your favorites!");
@@ -44,6 +46,7 @@ export default function ASingleRestaurant() {
         }
     }
 
+    // När användaren klickar på "Remove as favorite" så tas restaurangen bort från localstorage
     function removeAsFavorite() {
         var favorites = loadFavorites();
 
@@ -51,7 +54,7 @@ export default function ASingleRestaurant() {
             return favorite.id !== id;
         });
         localStorage.setItem("favorites", JSON.stringify(favorites));
-        alert("This restaurant has been removed from your favorites!")
+        alert("This restaurant has been removed from your favorites!");
     }
 
     //Hämtar kartan & placerar ut en markör på den klickade restaurangen
@@ -76,6 +79,7 @@ export default function ASingleRestaurant() {
                 <br></br>
             </div>
             <button className="btn btn-success" onClick={addRestaurantToFavorites}>Save as Favorite</button>
+            <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
         </div>
     ):
     (<span></span>);

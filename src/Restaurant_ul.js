@@ -4,17 +4,17 @@ import Restaurant from './Restaurant_li';
 export default function RestaurantList() {
     const [businesses, setRestaurant] = useState([]);
 
-    var favorites = localStorage.getItem("favorites");
+    const searchRef = useRef();
+    const cityRef = useRef();
 
+    // Skapar en tom lista i localstorage så fort sidan laddas
+    var favorites = localStorage.getItem("favorites");
     if(favorites == null) {
         localStorage.setItem("favorites", JSON.stringify([]));
     }
 
-    const searchRef = useRef();
-    const cityRef = useRef();
-
+    // Fetchar restauranger från Yelp API:et baserat på anvädarens input
     function searchRestaurants() {
-
         const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchRef.current.value + "&location=" + cityRef.current.value;
         fetch(apiUrl, {
             dataType: "JSON",
@@ -25,18 +25,19 @@ export default function RestaurantList() {
                 "Authorization": "Bearer B8MpKP0IqRtA3yEc4ORkYncoDs5dx0bIBCGf897_MhWVRuRfo_-724X6h3yjJvB8hio3IUMUJ4GCeuYLT-rvSpvJ5MA_5X4Ez6ZtqBxQzeADohRtEblL_ZH2Se2FYnYx"
             }
         })
-            .then(res => res.json())
-            .then(data => {
-                if ("businesses" in data) {
-                    setRestaurant(data.businesses);
-                } else {
-                    alert("Din sökning finns inte. Sök igen!")
-                }
-            });
+        .then(res => res.json())
+        .then(data => {
+            // Validerar att användarens input finns som värden bland det som fetchas, annars kommer en alert
+            if ("businesses" in data) {
+                setRestaurant(data.businesses);
+            } else {
+                alert("Din sökning finns inte. Sök igen!")
+            }
+        });
     }
  
     return (
-        //Print list, including buttons
+        // Returnerar sökfältet samt en lista med restauranger från API:et
         <div className="container">
             <h1 className="display-5 mt-4 mb-5 text-center">
                 Find your Restaurant
@@ -53,6 +54,6 @@ export default function RestaurantList() {
                     {businesses.map(restaurant => <Restaurant key={restaurant.id} item={restaurant} />)}
                 </ul>
             </div>
-        </div>);
-
+        </div>
+    );
 }

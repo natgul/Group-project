@@ -2,11 +2,11 @@
 Grupp-projekt med Mesam, Caroline, Natalie
 
 # Vårt Projekt
-Detta projekt ger användaren möjligheten att söka efter mat som hen är sugen på och stad. Resultatet visar alla restauranger i sökta stad som finns. Om någon av dessa restauranger fångar intresset hos användaren så kan hen trycka på den specifika restaurangen, komma till en ny sida och där få vidare information om den såsom Adress, telefonnummer samt 
+Detta projekt ger användaren möjligheten att söka efter mat som hen är sugen på i en specifik stad. Resultatet visar de 20 högst betygsatta restaurangerna i den sökta staden. Om någon av dessa restauranger fångar intresset hos användaren så kan hen trycka på den specifika restaurangen, komma till en ny sida och där få vidare information om den såsom adress, telefonnummer, betyg och se en karta som visar vart restaurangen ligger. På denna sida kan man även lägga till restaurangen i sin favoritlista för att lättare hitta den vid ett senare tillfälle. Visar det sig att man inte gillar restaurangen kan man även ta bort den från listan. 
 
 # React vs Vue vs Angular
 
-Realt, Angular och Vue.js anses vara de mest nedladdade javascript-ramverk och bland de är så är React den som har addats ner mest (https://www.npmtrends.com/angular-vs-react-vs-vue ). 
+React, Angular och Vue.js anses vara de mest nedladdade javascript-ramverk och bland de är så är React den som har addats ner mest (https://www.npmtrends.com/angular-vs-react-vs-vue ). 
 
 Angular är större än både React och Vue.js men i detta fallet - i denna uppgift är det en nackdel snarare än en fördel då React är tillräckligt (tsm med Bootstrap) för att uppnå kraven satta för detta projektet. Lärningskurvan för Anglar är alltså inte värt det i slutändan.  
 

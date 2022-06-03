@@ -5,6 +5,7 @@ import './App.css';
 import { Route, Routes, Link } from "react-router-dom";
 
 function App() {
+  // Renderar navbaren samt länkar till andra komponenter
   return (
     <div className="app">
       <nav className="navbar navbar-expand-lg">
@@ -18,15 +19,15 @@ function App() {
               </li>
             </ul>
         </div>
-        
       </nav>
       <hr></hr>
-      
+
       <Routes>
         <Route path="/" element={ <RestaurantList/> } />
         <Route path="/restaurant/:id" element={ <Restaurant/> } />
         <Route path="/favorites/" element={ <Favorites/> } />
       </Routes>
+      
     </div>
   );
 }
