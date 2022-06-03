@@ -12,15 +12,15 @@ function App() {
           <a className="navbar-brand text-white fs-2" href="/">Your Local Food Compass</a>
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <span className="nav-link navbar-brand mt-1 active text-white" aria-current="page"> 
+                <p className="nav-link navbar-brand mt-1 active text-white m-0" aria-current="page"> 
                   <Link to={"/favorites/"}> Favorites </Link>
-                </span>
+                </p>
               </li>
             </ul>
         </div>
-        
+        <hr></hr>
       </nav>
-      <hr></hr>
+     
       
       <Routes>
         <Route path="/" element={ <RestaurantList/> } />
