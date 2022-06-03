@@ -47,6 +47,10 @@ body{
     height: 50vh; 
 }
 
+.card {
+    background-color: transparent;
+}
+
 .card > a > img{
     height: 250px;
     width: 250px;
