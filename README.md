@@ -15,3 +15,16 @@ Vue ligger någonstans emellan React och Angular och har börjat gå förbi Angu
 React tillåter dess utvecklare att skapa interaktiva UI och front-end till en app. Den innehåller bra features och funktioner, något som sätter Angular i skugga. Deras verktyg gör att de kan försäkra att applikationen laddar snabbt. De ger möjligheten att separera data och presentation och enkla filer innehåller både markup och logik (JSX) och  är baserad på ett Virtuellt DOM (Document Object Model). De nackdelar som finns är att det är ett javascript bibliotek istället för ett helt ramverk. För att skapa en web app så krävs det alltså att man också använder andra bibliotek. Detta är dock en nackdel som inte besvärar gruppen.
 
 I slutändan så valdes React för att de har ett större community än Vue och dess lärningskurva är mindre än Angular samtidigt som de erbjuder bra features och funktioner. Något som passar detta projektet väl. 
+
+# Instruktioner
+Om du inte redan har det, installera Node,js: https://nodejs.org/en/
+
+Om du inte redan har det, installera följande genom att skriva i terminalen
+1. npm install react-router-dom
+2. npm install react react-dom leaflet
+3. npm install react-leaflet
+4. npm install -D @types/leaflet
+
+Gå in på den här länken: https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/ och tryck på knappen som finns på sidan.
+
+Slutligen skriv npm start i terminalen för att öppna sidan. 
