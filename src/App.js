@@ -18,7 +18,9 @@ function App() {
               </li>
             </ul>
         </div>
+        
       </nav>
+      <hr></hr>
       
       <Routes>
         <Route path="/" element={ <RestaurantList/> } />

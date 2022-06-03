@@ -13,8 +13,8 @@ export default function Favorite(props) {
                 <a href={"/restaurant/" + props.item.id}>
                     <img src={props.item.image_url} alt={props.item.name} />
                     <h3 className='card-title'> {props.item.name} </h3>
-                    <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
                 </a>
+                <button className="btn btn-danger ms-3" onClick={removeAsFavorite}>Remove as Favorite</button>
             </div>
         </li>
         
