@@ -51,7 +51,11 @@ li {
 .img{
     height: 200px;
 }
-
+#mainContent {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 30px;
+}
 #mapContainer { 
     width: 60%;
     height: 50vh; 
@@ -81,5 +85,13 @@ a {
 @media only screen and (max-width: 770px) {
     #mapContainer {
       width: 100%;
+    }
+    .navbar-nav {
+        position: absolute;
+        margin-top: 70px;
+    }
+    #mainContent {
+        margin-top: 40px;
+        border-radius: 0;
     }
   }

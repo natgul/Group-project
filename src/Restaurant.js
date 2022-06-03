@@ -56,7 +56,7 @@ export default function ASingleRestaurant() {
 
     //Hämtar kartan & placerar ut en markör på den klickade restaurangen
     return data.coordinates?(
-        <div className="container">
+        <div className="container" id="mainContent">
             <h2>{data.name}</h2>
             <p>Rating: {data.rating}/5</p>
             <p>Phone number: {data.phone}</p>

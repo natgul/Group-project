@@ -9,19 +9,14 @@ function App() {
     <div className="app">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand display-4 text-white" href="/">Your Local Food Compass</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <a className="navbar-brand text-white fs-2" href="/">Your Local Food Compass</a>
+            <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <span className="nav-link active text-white" aria-current="page"> 
+                <span className="nav-link navbar-brand mt-1 active text-white" aria-current="page"> 
                   <Link to={"/favorites/"}> Favorites </Link>
                 </span>
               </li>
             </ul>
-          </div>
         </div>
       </nav>
       
